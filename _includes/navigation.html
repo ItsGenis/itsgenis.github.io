@@ -1,0 +1,25 @@
+<li class="c-nav__item" role="presentation">
+  <a class="c-nav__link" href="https://twitch.tv/dor3nz">Twitch</a>
+</li>
+<li class="c-nav__item" role="presentation">
+  <a class="c-nav__link" href="https://twitter.com/dor3nz">Twitter</a>
+</li>
+<li class="c-nav__item" role="presentation">
+  <a class="c-nav__link" href="https://instagram.com/doodl3nz">Dibujos</a>
+</li>
+<li class="c-nav__item" role="presentation">
+  <a class="c-nav__link" href="https://instagram.com/dor3nz">Fotografía</a>
+</li>
+
+{% for page in site.pages %}
+  {% unless page.name == '404.md' %}
+    {% if page.title
+%}
+      <li class="c-nav__item" role="presentation">
+        <a class="c-nav__link" href="{{ page.url | prepend: site.baseurl }}">{{
+    page.title
+  }}</a>
+      </li>
+    {% endif %}
+  {% endunless %}
+{% endfor %}

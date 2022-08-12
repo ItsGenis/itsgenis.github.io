@@ -1,0 +1,28 @@
+<div class="o-grid__col c-post__card-body">
+  {% if post.image %}
+  <img
+    src="{{ post.image | prepend: site.baseurl }}"
+    class="c-post__image--card"
+    alt="{{ post.title }}"
+  />
+  {% endif %}
+
+  <div>
+    <a
+      href="{{ post.url | prepend: site.baseurl }}"
+      class="c-post-card {% if forloop.first == true %} c-post-card--first {% endif %} {% if forloop.last == true %} c-post-card--last {% endif %}"
+    >
+      <span class="c-post-card__date">{{ post.date | date: "%d %b %Y" }}</span>
+      <h3 class="c-post-card__title">{{ post.title }}</h3>
+      <p class="c-post-card__excerpt u-font-medium">
+        {{ post.excerpt }}
+      </p>
+    </a>
+
+    <div class='c-tags'>
+      {% for tag in post.tags %}
+        <a href='{{ site.baseurl }}/tag/{{ tag }}'>{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

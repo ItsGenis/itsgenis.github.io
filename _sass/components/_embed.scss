@@ -1,0 +1,14 @@
+/*------------------------------------*\
+  Components > Media Embed
+\*------------------------------------*/
+
+.twitter-tweet,
+.fluid-width-video-wrapper {
+  margin-bottom: $base-spacing-unit !important;
+}
+
+.stream-embed {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
